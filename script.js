@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
             // Movimento da imagem de fundo
-            const moveX = gamma / 5; // Ajuste a amplitude do movimento
+            const moveX = gamma / 3; // Ajuste a amplitude do movimento
             backgroundImage.style.transform = `translateX(${moveX}px)`;
         });
     }
