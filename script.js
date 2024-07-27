@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.DeviceOrientationEvent) {
         window.addEventListener('deviceorientation', (event) => {
             const { beta, gamma } = event;
-            const moveX = gamma / 3;
-            const moveY = beta / 3;
+            const moveX = gamma / 5;
+            const moveY = beta / 5;
             image.style.transform = `translate(${moveX}px, ${moveY}px)`;
         });
     }
