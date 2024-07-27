@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
         // Movimento da imagem de fundo
-        const moveX = ((clientX / innerWidth) - 0.5) * 40; // Ajuste a amplitude do movimento
+        const moveX = ((clientX / innerWidth) - 0.5) * 20; // Ajuste a amplitude do movimento
         backgroundImage.style.transform = `translateX(${moveX}px)`;
     });
 
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
             // Movimento da imagem de fundo
-            const moveX = gamma * 2; // Ajuste a amplitude do movimento
+            const moveX = gamma / 5; // Ajuste a amplitude do movimento
             backgroundImage.style.transform = `translateX(${moveX}px)`;
         });
     }
