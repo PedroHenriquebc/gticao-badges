@@ -1,28 +1,24 @@
-function changeImage(src) {
-    document.getElementById('badge-image').src = src;
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const image = document.getElementById('backgroundImage');
 
-let counter = 0;
-const updateRate = 10;
-const limit = 45;
-const badge = document.getElementById("badge-image");
+    document.addEventListener('mousemove', (event) => {
+        const { clientX, clientY } = event;
+        const { innerWidth, innerHeight } = window;
+        const moveX = ((clientX / innerWidth) - 0.5) * 50;
+        const moveY = ((clientY / innerHeight) - 0.5) * 50;
+        image.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
 
-function updateNow() {
-    return counter++ % updateRate === 0;
-};
-
-window.addEventListener("deviceorientation", function (event) {
-    if (updateNow()) {
-        let position = Math.round(event.gamma);
-        if (Math.abs(position) > limit) {
-            if (position > limit) {
-                position = limit;
-            } else {
-                position = -limit;
-            }
-        }
-        position = position / -100;
-        let style = "rotateY(" + position + "deg)";
-        badge.style.transform = style;
+    if (window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', (event) => {
+            const { beta, gamma } = event;
+            const moveX = gamma * 2;
+            const moveY = beta * 2;
+            image.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
     }
 });
+
+function changeImage(src) {
+    document.getElementById('backgroundImage').src = src;
+}
