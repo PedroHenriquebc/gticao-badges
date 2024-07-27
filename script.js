@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.DeviceOrientationEvent) {
         window.addEventListener('deviceorientation', (event) => {
             const { beta, gamma } = event;
-            const moveX = gamma / 15;
-            const moveY = beta / 15;
+            const moveX = gamma / 5;
+            const moveY = beta / 5;
             image.style.transform = `translate(${moveX}px, ${moveY}px)`;
         });
     }
@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (event) => {
         const { clientX, clientY } = event;
         const { innerWidth, innerHeight } = window;
-        const rotateX = ((clientY / innerHeight) - 0.5) * 25; // Reduzir a amplitude para uma rotação mais realista
-        const rotateY = ((clientX / innerWidth) - 0.5) * 25;  // Reduzir a amplitude para uma rotação mais realista
+        const rotateX = ((clientY / innerHeight) - 0.5) * 30; // Reduzir a amplitude para uma rotação mais realista
+        const rotateY = ((clientX / innerWidth) - 0.5) * 30;  // Reduzir a amplitude para uma rotação mais realista
         container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
 
@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.DeviceOrientationEvent) {
         window.addEventListener('deviceorientation', (event) => {
             const { beta, gamma } = event;
-            const rotateX = beta / 3;   // Reduzir a amplitude para uma rotação mais realista
-            const rotateY = gamma / 3;  // Reduzir a amplitude para uma rotação mais realista
+            const rotateX = beta / 1;   // Reduzir a amplitude para uma rotação mais realista
+            const rotateY = gamma / 1;  // Reduzir a amplitude para uma rotação mais realista
             container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         });
     }
