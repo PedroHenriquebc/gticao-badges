@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (event) => {
         const { clientX, clientY } = event;
         const { innerWidth, innerHeight } = window;
-        const moveX = ((clientX / innerWidth) - 0.5) * 10;
-        const moveY = ((clientY / innerHeight) - 0.5) * 10;
+        const moveX = ((clientX / innerWidth) - 0.5) * 2;
+        const moveY = ((clientY / innerHeight) - 0.5) * 2;
         image.style.transform = `translate(${moveX}px, ${moveY}px)`;
     });
 
@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (event) => {
         const { clientX, clientY } = event;
         const { innerWidth, innerHeight } = window;
-        const rotateX = ((clientY / innerHeight) - 0.5) * 25; // Reduzir a amplitude para uma rotação mais realista
-        const rotateY = ((clientX / innerWidth) - 0.5) * 25;  // Reduzir a amplitude para uma rotação mais realista
+        const rotateX = ((clientY / innerHeight) - 0.5) * 50; // Reduzir a amplitude para uma rotação mais realista
+        const rotateY = ((clientX / innerWidth) - 0.5) * 50;  // Reduzir a amplitude para uma rotação mais realista
         container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
 
