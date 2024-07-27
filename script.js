@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const image = document.getElementById('backgroundImage');
+    const image = document.getElementById('movable-container');
 
     document.addEventListener('mousemove', (event) => {
         const { clientX, clientY } = event;
         const { innerWidth, innerHeight } = window;
-        const moveX = ((clientX / innerWidth) - 0.5) * 50;
-        const moveY = ((clientY / innerHeight) - 0.5) * 50;
+        const moveX = ((clientX / innerWidth) - 0.5) * 10;
+        const moveY = ((clientY / innerHeight) - 0.5) * 10;
         image.style.transform = `translate(${moveX}px, ${moveY}px)`;
     });
 
