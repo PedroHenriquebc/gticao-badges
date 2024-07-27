@@ -70,14 +70,18 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('deviceorientation', (event) => {
             const { beta, gamma } = event;
 
-            // Rotação do container
-            const rotateX = beta / 3;   // Reduzir a amplitude para uma rotação mais realista
-            const rotateY = gamma / 3;  // Reduzir a amplitude para uma rotação mais realista
-            container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            // // Rotação do container
+            // const rotateX = beta / 3;   // Reduzir a amplitude para uma rotação mais realista
+            // const rotateY = gamma / 3;  // Reduzir a amplitude para uma rotação mais realista
+            // container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+            // Movimento do container apenas para a esquerda e direita
+            const moveX = gamma / 10; // Ajuste a amplitude do movimento para ser mais suave
+            container.style.transform = `translateX(${moveX}px)`;
 
             // Movimento da imagem de fundo
-            const moveX = gamma * 2; // Ajuste a amplitude do movimento
-            backgroundImage.style.transform = `translateX(${moveX}px)`;
+            const backgroundMoveX = gamma * 2; // Ajuste a amplitude do movimento
+            backgroundImage.style.transform = `translateX(${backgroundMoveX}px)`;
         });
     }
 });
